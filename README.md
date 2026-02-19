@@ -2,7 +2,9 @@
 📄 CV Generator
 A sleek web app that creates professional CVs instantly. No sign-up, no hassle - just fill and download!
 
-https://via.placeholder.com/800x400/667eea/ffffff?text=CV+Generator+Demo
+<img width="483" height="588" alt="image" src="https://github.com/user-attachments/assets/bdcffe98-ce67-4dd3-87f1-671bda9c5bd2" />
+
+https://ashish-code-lab.github.io/web-based-cv-generator/
 
 ✨ Features
 ⚡ Instant Creation - Get your CV in seconds
@@ -26,7 +28,7 @@ JavaScript
 Clone & install
 
 bash
-git clone https://github.com/yourusername/cv-generator.git
+git clone https://github.com/Ashish-code-lab/cv-generator.git
 cd cv-generator
 pip install flask
 Run
