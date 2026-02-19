@@ -87,7 +87,7 @@ JavaScript
 Clone & install
 
 bash
-git clone https://github.com/yourusername/cv-generator.git
+git clone https://github.com/Ashish-code-lab/cv-generator.git
 cd cv-generator
 pip install flask
 Run
