@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 CV Generator</h1>
+        <p class="subtitle">Please fill out your details</p>
+        
+        <!-- Form Section Only -->
+        <div class="form-section center-form">
+            <form method="POST" action="/generate">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Eg John Doe" required>
+                    <small>Enter your full name</small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="demo@gmail.com" required>
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Eg 9999999999">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="about">About You</label>
+                    <textarea id="about" name="about" rows="4" placeholder="Write something about you"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="degree">Degree *</label>
+                    <input type="text" id="degree" name="degree" placeholder="B-Tech Information Technology" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="institution">Institution</label>
+                        <input type="text" id="institution" name="institution" placeholder="University/College name">
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="year">Passing Year</label>
+                        <input type="text" id="year" name="year" placeholder="2024">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <input type="text" id="skills" name="skills" placeholder="Python, JavaScript, React, SQL">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Generate CV</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Success message section (hidden by default) -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-content">
+                <span class="success-icon">✅</span>
+                <h3>CV Generated Successfully!</h3>
+                <p>Your CV has been created. You can now view or download it.</p>
+                <div class="success-buttons">
+                    <a href="/view-cv" class="btn btn-primary">View My CV</a>
+                    <a href="/" class="btn btn-secondary">Create Another</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show success message if CV was just generated
+        {% if generated %}
+        document.getElementById('successMessage').style.display = 'flex';
+        {% endif %}
+    </script>
+</body>
+</html>
